@@ -1,9 +1,11 @@
+# Intellij IDEA
+out/
+.vscode/
+
 # Created by https://www.toptal.com/developers/gitignore/api/java,rust,python
 # Edit at https://www.toptal.com/developers/gitignore?templates=java,rust,python
 
 ### Java ###
-# Intellij IDEA
-out/
 
 # Compiled class file
 *.class
