@@ -2,6 +2,9 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=java,rust,python
 
 ### Java ###
+# Intellij IDEA
+out/
+
 # Compiled class file
 *.class
 
