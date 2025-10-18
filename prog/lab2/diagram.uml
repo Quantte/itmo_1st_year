@@ -1,0 +1,172 @@
+@startuml
+!define RECTANGLE class
+
+top to bottom direction
+
+package "ru.ifmo.se.pokemon" as pokemon {
+    class Pokemon {
+        +Pokemon(String name, int level)
+        #setType(Type... types)
+        +setStats(double hp, double atk, double def, double spa, double spd, double spe)
+        #setMove(Move... moves)
+        #addMove(Move move)
+        +hasType(Type type)
+    }
+
+    abstract class Move {
+        #Type type
+        #double accuracy 
+        #double power 
+        +Move(Type type, double pow, double acc)
+        #void applyOppEffects(Pokemon p)
+        #String describe()
+    }
+
+    abstract class DamageMove {
+        +DamageMove(Type type, double pow, double acc)
+        #void applyOppDamage(Pokemon def, double damage)
+    }
+
+    class PhysicalMove {
+        +PhysicalMove(Type type, double pow, double acc)
+    }
+
+    class SpecialMove {
+        +SpecialMove(Type type, double pow, double acc)
+    }
+
+    class StatusMove {
+        +StatusMove(Type type, double pow, double acc)
+    }
+
+    enum Type {
+        FAIRY, STEEL, ROCK, ICE, GHOST, FIRE, DARK, POISON, NORMAL, PSYCHIC
+    }
+
+    enum Stat {
+        EVASION, SPECIAL_DEFENSE
+    }
+
+    class Effect {
+        +static void flinch(Pokemon p)
+        +static void burn(Pokemon p)
+        +static void poison(Pokemon p)
+    }
+}
+
+package "lib.MyPokemons" as mypokemons {
+    class Mawile {
+        +Mawile(String name, int level)
+    }
+
+    class Amaura {
+        +Amaura(String name, int level)
+    }
+
+    class Aurorus {
+        +Aurorus(String name, int level)
+    }
+
+    class Litwick {
+        +Litwick(String name, int level)
+    }
+
+    class Lampent {
+        +Lampent(String name, int level)
+    }
+
+    class Chandelure {
+        +Chandelure(String name, int level)
+    }
+}
+
+package "lib.MyMoves" as mymoves {
+    class Astonish {
+        +Astonish()
+        #applyOppEffects(Pokemon p)
+        #describe()
+    }
+
+    class Flamethrower {
+        +Flamethrower()
+        #applyOppDamage(Pokemon def, double damage)
+        #describe()
+    }
+
+    class FeintAttack {
+        +FeintAttack()
+        #checkAccuracy(Pokemon att, Pokemon def)
+        #describe()
+    }
+
+    class DoubleTeam {
+        +DoubleTeam()
+        #applySelfEffects(Pokemon p)
+        #describe()
+    }
+
+    class RockSlide {
+        +RockSlide()
+        #applyOppEffects(Pokemon p)
+        #describe()
+    }
+
+    class RockThrow {
+        +RockThrow()
+        #describe()
+    }
+
+    class FrostBreath {
+        +FrostBreath()
+        #calcCriticalHit(Pokemon att, Pokemon def)
+        #describe()
+    }
+
+    class Psychic {
+        +Psychic()
+        #applyOppEffects(Pokemon p)
+        #describe()
+    }
+
+    class Smog {
+        +Smog()
+        #applyOppEffects(Pokemon p)
+        #describe()
+    }
+
+    class DarkPulse {
+        +DarkPulse()
+        #applyOppEffects(Pokemon p)
+        #describe()
+    }
+}
+
+
+' Наследование
+Mawile --|> Pokemon
+Amaura --|> Pokemon
+Aurorus --|> Amaura
+Litwick --|> Pokemon
+Lampent --|> Litwick
+Chandelure --|> Lampent
+
+Astonish --|> PhysicalMove
+Flamethrower --|> SpecialMove
+FeintAttack --|> PhysicalMove
+DoubleTeam --|> StatusMove
+RockSlide --|> PhysicalMove
+RockThrow --|> PhysicalMove
+FrostBreath --|> SpecialMove
+Psychic --|> SpecialMove
+Smog --|> SpecialMove
+DarkPulse --|> SpecialMove
+
+DamageMove --|> Move
+PhysicalMove --|> DamageMove
+SpecialMove --|> DamageMove
+StatusMove --|> Move
+
+' Ассоциации
+Pokemon *-- Move
+Move ..> Effect : uses
+@enduml
