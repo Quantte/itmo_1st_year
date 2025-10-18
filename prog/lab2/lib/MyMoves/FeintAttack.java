@@ -16,7 +16,7 @@ public final class FeintAttack extends PhysicalMove {
     }
 
     @Override
-    public String describe() {
+    protected String describe() {
         return "uses Feint Attack";
     }
 }
