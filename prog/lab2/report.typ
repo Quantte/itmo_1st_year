@@ -72,8 +72,9 @@
 
 = Диаграмма классов реализованной объектной модели
 
-#image(".typ_pic/diagram.png")
-
+#align(center)[
+  #image(".typ_pic/diagram.png", width:120%)
+]
 #pagebreak()
 
 = Исходный код программы
