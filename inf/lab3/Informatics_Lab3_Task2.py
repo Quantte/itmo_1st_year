@@ -6,14 +6,14 @@ import re
 
 tests = [
     "students.spam@yandex.ru",
-    "students.spam@dev.yandex_beta.ru",
+    "students_spam08@dev.yandex.ru",
     "example@example", 
-    "students.spam@@y_andex.ru.",
+    "students.spam@y_andex.ru",
     "@yandex.ru",
 ]
 
 for test in tests:
-    reg = r"\w@\w+(\.\w+)+$"
+    reg = r"^[\w\.]+@([a-zA-Z]+(?:\.[a-zA-Z]+)+)$"
     res = re.search(reg, test)
-    print(res.group()[2:] if res else "Fail!")
+    print(res.group(1) if res else "Fail!")
 

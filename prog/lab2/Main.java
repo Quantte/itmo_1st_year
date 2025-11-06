@@ -23,8 +23,8 @@ public class Main {
         b.addAlly(au1);
         b.addAlly(l1);
 
-        b.addFoe(a1);
         b.addFoe(la1);
+        b.addFoe(a1);
         b.addFoe(c1);
 
         b.go();
