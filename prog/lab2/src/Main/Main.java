@@ -1,3 +1,6 @@
+package Main;
+
+
 import ru.ifmo.se.pokemon.Battle;
 
 import lib.MyPokemons.Mawile;
