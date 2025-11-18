@@ -1,4 +1,4 @@
-package Main;
+package src.Main;
 
 
 import ru.ifmo.se.pokemon.Battle;
