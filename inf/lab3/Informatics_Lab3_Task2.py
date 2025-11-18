@@ -5,7 +5,7 @@
 import re
 
 tests = [
-    "students.spam@yandex.ru",
+    "students.spam@yandex.ru dfasdlalskbn",
     "students_spam08@dev.yandex.ru",
     "example@example", 
     "students.spam@y_andex.ru",
