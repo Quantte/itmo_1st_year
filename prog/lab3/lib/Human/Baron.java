@@ -1,24 +1,24 @@
 package lib.Human;
 
-import lib.Utils.Coordinates;
-import lib.Utils.Utils.Direction;
+import java.util.Random;
+
+import lib.Utils.*;
 import lib.Objects.Teeth;
 import lib.Objects.Bottle;
-import lib.Utils.NoBottleException;
-import lib.Utils.TeethCondition;
+
 
 import java.util.Objects;
 import java.util.ArrayList;
 
 public class Baron extends Human {
 
-    private TeethCondition teethCondition;
     private Teeth teeth = new Teeth(null);
     private ArrayList<Bottle> bottles = new ArrayList<>();
 
     public Baron(String name, Coordinates coordinates) {
         super(name, coordinates);
     }
+
     public Baron(String name, Coordinates coordinates, Teeth teeth, ArrayList<Bottle> bottles) {
         super(name, coordinates);
         this.teeth = teeth;
@@ -77,6 +77,15 @@ public class Baron extends Human {
                 + obj.toString() + " в " + obj1.toString());
     }
 
+    @Override
+    public void see(Human human) {
+        if (human instanceof Herceg) {
+            System.out.println(this.name + " смотрит на Герцога");
+        } else {
+            System.out.println(this.name + " смотрит на " + human.name);
+        }
+    }
+
     public void stretchOutHands(Direction[] directions) {
         String message = this.name + " протягивает руки ";
         for (Direction d : directions) {
@@ -85,12 +94,37 @@ public class Baron extends Human {
         System.out.println(message);
     }
 
-    public void openBottle(Bottle bottle) throws NoBottleException {
-        if (this.bottles.isEmpty()) {
-            throw new NoBottleException();
+    public void catchBottles(int num) {
+        // Генерируем бутылки с разными напитками
+        for (int i = 0; i < num; i++) {
+            Drinks drink = Drinks.values()[new Random().nextInt(7)];
+            this.bottles.add(new Bottle(drink.name()));
         }
+        System.out.println(this.name + " схватил " + num + " бутылки(ок) с напитками");
+    }
 
+    public void drink() throws NoBottlesException {
+        Bottle bottle = null;
+        try {
+            if (this.bottles.isEmpty()) {
+                throw new NoBottlesException("There are no bottles left");
+            }
+            bottle = this.bottles.removeFirst();
+            if (Math.random() > 0.5) {
+                teeth.getStronger();
+            }
+            teeth.open(bottle);
+            System.out.println(this.name + " опрокинул бутылку с " + bottle.getContent() + " себе в рот\n");
+        } catch (NoBottlesException e) {
+            System.out.println(this.name + ": " + e.getMessage());
+        } catch (CannotOpenBottleException e) {
+            System.out.println(this.name + ": " + e.getMessage());
+            this.bottles.addLast(bottle);
+        }
+    }
 
+    public void sitDown(String place) {
+        System.out.printf("%s удобно сел на %s\n", this.name, place);
     }
 
     @Override

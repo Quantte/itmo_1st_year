@@ -1,11 +1,13 @@
 package lib.Objects;
 
-import lib.Utils.Utils.Direction;
+import lib.Utils.Direction;
 
 public class Barrow {
+    private final String name;
     private double speed;
 
-    public Barrow(double speed) {
+    public Barrow(String name, double speed) {
+        this.name = name;
         this.speed = speed;
     }
 
@@ -14,6 +16,7 @@ public class Barrow {
             case FRONT -> setSpeed(speed);
             case BACK -> setSpeed(-speed);
         }
+        System.out.printf("Скорость объекта %s равна %.2f\n", this.name, getSpeed());
     }
 
     public void setSpeed(double speed) {
@@ -22,6 +25,7 @@ public class Barrow {
 
     public void stop() {
         this.speed = 0;
+        System.out.println(this.name + " остановилась");
     }
 
     public double getSpeed() {

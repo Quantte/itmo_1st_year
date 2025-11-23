@@ -1,6 +1,6 @@
 package lib.Human;
 
-import lib.Utils.Utils.Direction;
+import lib.Utils.Direction;
 import lib.Utils.Coordinates;
 
 
@@ -12,21 +12,12 @@ public abstract class Human {
         this.name = name;
         this.coordinates = coordinates;
     }
-    public void move(Direction dir, double dist) {
 
-    }
-    public void move(Coordinates coordinates) {
+    public abstract void move(Direction dir, double dist);
+    public abstract void move(Coordinates coordinates);
 
-    }
-
-    public void feel(String feeling) {
-
-    }
-
-    public void spot(Object obj) {
-
-    }
-    public void spot(Object obj, Object obj1) {
-
-    }
+    public abstract void feel(String feeling);
+    public abstract void spot(Object obj);
+    public abstract void spot(Object obj, Object obj1);
+    public abstract void see(Human human);
 }
