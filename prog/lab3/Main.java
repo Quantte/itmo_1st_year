@@ -3,9 +3,9 @@ import lib.Human.Baron;
 import lib.Objects.Door;
 import lib.Objects.Passage;
 import lib.Objects.Teeth;
-import lib.Utils.*;
 import lib.Objects.Barrow;
 import lib.Objects.Bottle;
+import lib.Utils.*;
 
 import java.util.ArrayList;
 

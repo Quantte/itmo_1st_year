@@ -1,6 +1,8 @@
 report.pdf
 # Intellij IDEA
+*.iml
 out/
+.idea/
 .vscode/
 # Created by https://www.toptal.com/developers/gitignore/api/java,rust,python
 # Edit at https://www.toptal.com/developers/gitignore?templates=java,rust,python

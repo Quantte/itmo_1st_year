@@ -109,7 +109,7 @@ public class Baron extends Human {
             if (this.bottles.isEmpty()) {
                 throw new NoBottlesException("There are no bottles left");
             }
-            bottle = this.bottles.removeFirst();
+            bottle = this.bottles.remove(0);
             if (Math.random() > 0.5) {
                 teeth.getStronger();
             }
@@ -119,7 +119,7 @@ public class Baron extends Human {
             System.out.println(this.name + ": " + e.getMessage());
         } catch (CannotOpenBottleException e) {
             System.out.println(this.name + ": " + e.getMessage());
-            this.bottles.addLast(bottle);
+            this.bottles.add(bottle);
         }
     }
 
