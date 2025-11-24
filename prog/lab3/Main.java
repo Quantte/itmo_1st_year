@@ -47,7 +47,7 @@ public class Main {
         baron.drink();
 
         herceg.see(baron);
-        herceg.move_in(narrow_passage);
+        herceg.moveIn(narrow_passage);
 
     }
 }

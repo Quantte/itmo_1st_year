@@ -14,8 +14,8 @@ public record TeethCondition(Materials material, int local_durability) {
     public boolean isStrongerThan(Materials origin) {
         /*
          * Проверяет, крепче ли текущее состояние указанного материала
-         * @param origin - материал для сравнения
-         * @return true, если прочность выше уровня материала
+         * origin - материал для сравнения
+         * return true, если прочность выше уровня материала
          */
 
         return this.material.ordinal() > origin.ordinal() ||

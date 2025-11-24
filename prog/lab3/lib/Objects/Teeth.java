@@ -36,10 +36,6 @@ public class Teeth implements OpeningInstrument {
         }
     }
 
-    public TeethCondition getTeethCondition() {
-        return teethCondition;
-    }
-
     @Override
     public void open(Bottle bottle) throws CannotOpenBottleException {
         bottle.open(this);

@@ -18,14 +18,6 @@ public class Passage {
         this.contained_door = door;
     }
 
-    public boolean isNarrow() {
-        return this.is_narrow;
-    }
-
-    public boolean isContainsDoor() {
-        return this.contains_door;
-    }
-
     public Door getContainedDoor() {
         if (contained_door != null) {
             return this.contained_door;

@@ -34,7 +34,7 @@ public class Barrow {
 
     @Override
     public String toString() {
-        return "Тачка";
+        return this.name;
     }
 
 }

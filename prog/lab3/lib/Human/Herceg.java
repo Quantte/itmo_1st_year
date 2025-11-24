@@ -72,7 +72,7 @@ public class Herceg extends Human{
         }
     }
 
-    public void move_in(Passage passage) {
+    public void moveIn(Passage passage) {
         System.out.println(this.name + " углубился в " + passage);
     }
 

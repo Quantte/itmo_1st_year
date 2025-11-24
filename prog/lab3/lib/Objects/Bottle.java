@@ -19,7 +19,7 @@ public class Bottle {
         this.is_opened = false;
     }
 
-    public void open(OpeningInstrument instrument) throws CannotOpenBottleException {
+    public void open(OpeningInstrument instrument) {
         try {
             if (this.is_opened) {
                 throw new CannotOpenBottleException("Bottle is already opened");

@@ -1,8 +1,8 @@
 package lib.Utils;
 
 public enum Materials {
-    WOOD(),
-    IRON(),
-    STEEL(),
-    DIAMOND();
+    WOOD,
+    IRON,
+    STEEL,
+    DIAMOND;
 }

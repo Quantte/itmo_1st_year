@@ -9,7 +9,7 @@ public class Door {
         this.is_small = is_small;
     }
 
-    public boolean get_size() {
+    public boolean getSize() {
         return this.is_small;
     }
 
