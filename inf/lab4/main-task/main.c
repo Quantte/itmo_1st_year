@@ -20,6 +20,6 @@ int main(int argc, char **argv) {
 		return 1;
 	}
 
-	//emit_plain(g_schedule, stdout);
+	emit_plain(g_schedule, stdout);
 	return 0;
 }

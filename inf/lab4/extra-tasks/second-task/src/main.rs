@@ -2,7 +2,6 @@ use std::{env, fs};
 use serde_json::Value;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    // путь к файлу: первый аргумент или "schedule.hcl" по умолчанию
     let path = env::args()
         .nth(1)
         .unwrap_or_else(|| "schedule.hcl".to_string());

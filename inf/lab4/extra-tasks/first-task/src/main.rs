@@ -96,7 +96,7 @@ fn dump_yaml(schedule: &[Day]) {
         }
     }
     
-    println!("{content}");
+    // println!("{content}");
 
     match fs::write("schedule.yaml", content) {
         Ok(()) => print!("File \"schedule.yaml\" saved"),

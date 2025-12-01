@@ -157,6 +157,7 @@ fn dump_xml(schedule: &[Day]) {
     }
 
     content.push_str("  </day>\n</Root>\n");
+    
     match fs::write("schedule.xml", content) {
         Ok(()) => print!("File \"schedule.xml\" saved"),
         Err(e) => panic!("Error saving file: {}", e)
