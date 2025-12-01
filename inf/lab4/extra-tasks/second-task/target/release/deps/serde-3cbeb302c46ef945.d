@@ -1,0 +1,14 @@
+/home/fadey/Developer/itmo_1st_year/inf/lab4/extra-tasks/second-task/target/release/deps/serde-3cbeb302c46ef945.d: /home/fadey/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /home/fadey/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /home/fadey/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /home/fadey/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /home/fadey/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /home/fadey/Developer/itmo_1st_year/inf/lab4/extra-tasks/second-task/target/release/build/serde-14746f82ce53477e/out/private.rs
+
+/home/fadey/Developer/itmo_1st_year/inf/lab4/extra-tasks/second-task/target/release/deps/libserde-3cbeb302c46ef945.rlib: /home/fadey/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /home/fadey/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /home/fadey/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /home/fadey/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /home/fadey/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /home/fadey/Developer/itmo_1st_year/inf/lab4/extra-tasks/second-task/target/release/build/serde-14746f82ce53477e/out/private.rs
+
+/home/fadey/Developer/itmo_1st_year/inf/lab4/extra-tasks/second-task/target/release/deps/libserde-3cbeb302c46ef945.rmeta: /home/fadey/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /home/fadey/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /home/fadey/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /home/fadey/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /home/fadey/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /home/fadey/Developer/itmo_1st_year/inf/lab4/extra-tasks/second-task/target/release/build/serde-14746f82ce53477e/out/private.rs
+
+/home/fadey/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs:
+/home/fadey/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs:
+/home/fadey/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs:
+/home/fadey/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs:
+/home/fadey/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs:
+/home/fadey/Developer/itmo_1st_year/inf/lab4/extra-tasks/second-task/target/release/build/serde-14746f82ce53477e/out/private.rs:
+
+# env-dep:OUT_DIR=/home/fadey/Developer/itmo_1st_year/inf/lab4/extra-tasks/second-task/target/release/build/serde-14746f82ce53477e/out

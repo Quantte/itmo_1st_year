@@ -53,7 +53,7 @@ fn main() {
          run_first_task();   
     }
     let elapsed = start.elapsed();
-    println!("Десериализация flex & bison + конвертация в YAML");
+    println!("Десериализация flex & bison + сериализация в YAML");
     println!("Общее время для {} запусков: {:.3?}", ITER_NUM, elapsed);
     println!("Среднее на один запуск: {:.3?}\n", elapsed / ITER_NUM);
 
@@ -63,14 +63,14 @@ fn main() {
          run_second_task();   
     }
     let elapsed = start.elapsed();
-    println!("Конвертация в YAML с кастомными библиотеками");
+    println!("Конвертация из HCL в YAML с hcl и serde_yaml");
     println!("Общее время для {} запусков: {:.3?}", ITER_NUM, elapsed);
     println!("Среднее на один запуск: {:.3?}\n", elapsed / ITER_NUM);
 
 
     let start = Instant::now();
     for _ in 0..ITER_NUM {
-         run_third_task();   
+         run_third_task();
     }
     let elapsed = start.elapsed();
     println!("Конвертация в XML");

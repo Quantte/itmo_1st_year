@@ -1,0 +1,1 @@
+/home/fadey/Developer/itmo_1st_year/inf/lab4/extra-tasks/third-task/target/release/third-task: /home/fadey/Developer/itmo_1st_year/inf/lab4/extra-tasks/third-task/build.rs /home/fadey/Developer/itmo_1st_year/inf/lab4/extra-tasks/third-task/src/main.rs
