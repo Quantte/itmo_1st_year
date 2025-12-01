@@ -1,0 +1,9 @@
+schedule ::= {day_block}
+
+day_block ::= "day" String { {lesson_block} }
+
+lesson_block ::= "lesson" { {data_block} }
+
+data_block ::= data_type "=" {value}
+
+value ::= String

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Root>
+  <day>
+    <wednesday>
+      <lesson>
+        <time>13:30-15:00</time>
+        <subject>Программирование</subject>
+        <room>1216/0 (усл) ауд. ул.Ломоносова, д.9, лит. М</room>
+        <type>Лекция</type>
+        <teacher>Гаврилов Антон Валерьевич</teacher>
+      </lesson>
+    </wednesday>
+    <saturday>
+      <lesson>
+        <time>18:50-20:20</time>
+        <subject>Россия в истории современных международных отношений</subject>
+        <room>Дистант</room>
+        <type>Лекция</type>
+        <teacher>Богомазов Николай Иванович</teacher>
+      </lesson>
+      <lesson>
+        <time>20:30-22:00</time>
+        <subject>Россия в истории современных международных отношений</subject>
+        <room>Дистант</room>
+        <type>Практика</type>
+        <teacher>Шумяков Рауф Артурович</teacher>
+      </lesson>
+    </saturday>
+  </day>
+</Root>
