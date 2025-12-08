@@ -1,12 +1,16 @@
 package lib.Human;
 
+import lib.Objects.Bottle;
 import lib.Objects.Passage;
+import lib.Utils.CannotOpenBottleException;
 import lib.Utils.Direction;
 import lib.Utils.Coordinates;
+import lib.Utils.OpeningInstrument;
+import lib.Objects.Door;
 
 import java.util.Objects;
 
-public class Herceg extends Human{
+public class Herceg extends Human implements OpeningInstrument {
     public Herceg(String name, Coordinates coordinates) {
         super(name, coordinates);
     }
@@ -91,4 +95,14 @@ public class Herceg extends Human{
         return Objects.hash(this.name, this.coordinates);
     }
 
+    @Override
+    public void open(Bottle bottle) throws CannotOpenBottleException {
+
+    }
+
+    @Override
+    public void open(Door door) {
+        door.openDoor();
+        System.out.println(this.name +  " открыл дверь: " + door);
+    }
 }

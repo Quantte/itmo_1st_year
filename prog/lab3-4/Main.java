@@ -25,6 +25,14 @@ public class Main {
                 new ArrayList<Bottle>()
         );
 
+        baron.interact(barrow, "лежит на тачке");
+        System.out.println("[TEST] текущий взаимодействуемый объект для Барона: " + baron.getInteracted_object());
+        herceg.interact(barrow, "катит тачку");
+
+        System.out.println("[TEST] Door state: " + small_door.isOpened());
+        herceg.open(small_door);
+        System.out.println("[TEST] Door state: " + small_door.isOpened());
+
         herceg.feel("Тачка катится медленнее и медленнее");
         herceg.feel("можно наконец остановиться");
         herceg.spot(narrow_passage);

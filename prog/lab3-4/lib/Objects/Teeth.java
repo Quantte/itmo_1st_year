@@ -5,6 +5,8 @@ import lib.Utils.OpeningInstrument;
 import lib.Utils.TeethCondition;
 import lib.Utils.Materials;
 
+import lib.Objects.Door;
+
 import java.util.Objects;
 
 public class Teeth implements OpeningInstrument {
@@ -39,6 +41,11 @@ public class Teeth implements OpeningInstrument {
     @Override
     public void open(Bottle bottle) throws CannotOpenBottleException {
         bottle.open(this);
+    }
+
+    @Override
+    public void open(Door door) {
+
     }
 
     @Override
