@@ -1,3 +1,7 @@
+# LaTeX
+*.synctex.gz
+*.aux
+
 report.pdf
 # Intellij IDEA
 *.iml

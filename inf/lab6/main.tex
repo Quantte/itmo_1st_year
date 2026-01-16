@@ -1,0 +1,38 @@
+% !TEX TS-program = xelatex
+
+\documentclass[10.5pt]{article}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\usepackage{amsmath, amssymb}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage[table]{xcolor}
+\usepackage{array}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{setspace}
+
+
+\setdefaultlanguage{russian}
+\setmainfont{Liberation Serif}
+
+\geometry{a4paper, top=1.2cm, bottom=1.6cm, left=1.6cm, right=1.8cm, nofoot}
+
+
+\setstretch{1.15}
+\setlength{\columnsep}{0.5cm}
+
+\newcommand{\ang}[1]{\angle{#1}}
+
+\pagestyle{empty}
+
+\begin{document}
+
+% Подключаем титульный лист
+\input{titlepage}
+
+% Подключаем статью
+\input{article}
+
+\end{document}
