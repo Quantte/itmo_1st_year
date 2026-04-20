@@ -71,7 +71,8 @@ public class ProductBuilder {
         while (true) {
             writer.prompt(prompt);
             String line = reader.readLine();
-            if (line != null && !line.trim().isEmpty()) return line.trim();
+            if (line == null) throw new IOException("Unexpected EOF while reading input.");
+            if (!line.trim().isEmpty()) return line.trim();
             writer.println("Error: value cannot be empty.");
         }
     }
@@ -87,8 +88,9 @@ public class ProductBuilder {
         while (true) {
             writer.prompt(prompt);
             String line = reader.readLine();
+            if (line == null) throw new IOException("Unexpected EOF while reading input.");
             try {
-                float val = Float.parseFloat(line == null ? "" : line.trim());
+                float val = Float.parseFloat(line.trim());
                 if (!constraint.test(val)) {
                     writer.println("Error: value out of allowed bounds.");
                     continue;
@@ -108,8 +110,9 @@ public class ProductBuilder {
         while (true) {
             writer.prompt(prompt);
             String line = reader.readLine();
+            if (line == null) throw new IOException("Unexpected EOF while reading input.");
             try {
-                return Long.parseLong(line == null ? "" : line.trim());
+                return Long.parseLong(line.trim());
             } catch (NumberFormatException e) {
                 writer.println("Error: expected an integer (long).");
             }
@@ -120,8 +123,9 @@ public class ProductBuilder {
         while (true) {
             writer.prompt(prompt);
             String line = reader.readLine();
+            if (line == null) throw new IOException("Unexpected EOF while reading input.");
             try {
-                return Double.parseDouble(line == null ? "" : line.trim());
+                return Double.parseDouble(line.trim());
             } catch (NumberFormatException e) {
                 writer.println("Error: expected a floating-point number.");
             }
@@ -140,8 +144,9 @@ public class ProductBuilder {
         while (true) {
             writer.prompt(prompt);
             String line = reader.readLine();
+            if (line == null) throw new IOException("Unexpected EOF while reading input.");
             try {
-                return Integer.parseInt(line == null ? "" : line.trim());
+                return Integer.parseInt(line.trim());
             } catch (NumberFormatException e) {
                 writer.println("Error: expected an integer.");
             }
@@ -156,7 +161,8 @@ public class ProductBuilder {
         while (true) {
             writer.prompt("> ");
             String line = reader.readLine();
-            if (line == null || line.trim().isEmpty()) return null;
+            if (line == null) return null;
+            if (line.trim().isEmpty()) return null;
             try {
                 return Enum.valueOf(enumClass, line.trim().toUpperCase());
             } catch (IllegalArgumentException e) {
