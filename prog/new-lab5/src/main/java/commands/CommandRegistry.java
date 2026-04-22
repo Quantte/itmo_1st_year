@@ -1,5 +1,8 @@
 package commands;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.LinkedHashMap;
@@ -9,6 +12,8 @@ import java.util.Map;
  * Maps command names to {@link Command} instances and maintains an execution history.
  */
 public class CommandRegistry {
+    private static final Logger log = LoggerFactory.getLogger(CommandRegistry.class);
+
     private final Map<String, Command> commands = new LinkedHashMap<>();
     private final Deque<String> history = new ArrayDeque<>();
     private static final int MAX_HISTORY = 9;
@@ -44,11 +49,13 @@ public class CommandRegistry {
     public void execute(String name, String[] args, ExecutionContext ctx) throws ExitException {
         Command cmd = commands.get(name);
         if (cmd == null) {
+            log.warn("Unknown command: '{}'", name);
             ctx.getWriter().println("Unknown command: '" + name + "'. Type 'help' for help.");
             return;
         }
         if (history.size() == MAX_HISTORY) history.pollFirst();
         history.addLast(name);
+        log.debug("Dispatching command '{}'", name);
         cmd.execute(args, ctx);
     }
 }

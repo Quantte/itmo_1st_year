@@ -6,6 +6,9 @@ import commands.ExitException;
 import commands.ExecutionContext;
 import commands.impl.*;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.IOException;
 
 /**
@@ -14,6 +17,8 @@ import java.io.IOException;
  * and dispatches to the registered command.
  */
 public class App {
+    private static final Logger log = LoggerFactory.getLogger(App.class);
+
     private final ExecutionContext ctx;
     private final CommandRegistry registry;
 
@@ -68,10 +73,13 @@ public class App {
             System.arraycopy(tokens, 1, args, 0, args.length);
 
             try {
+                log.debug("Executing command: {} {}", name, String.join(" ", args));
                 registry.execute(name, args, ctx);
             } catch (ExitException e) {
+                log.info("Exit command received");
                 break;
             } catch (Exception e) {
+                log.error("Unexpected error executing '{}': {}", name, e.getMessage(), e);
                 ctx.getWriter().error("Unexpected error: " + e.getMessage());
             }
         }

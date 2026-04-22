@@ -5,6 +5,9 @@ import commands.ExitException;
 import commands.ExecutionContext;
 import console.ConsoleReader;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -18,7 +21,9 @@ import java.nio.file.Path;
  * Detects and rejects recursive script execution (direct or transitive cycles).
  */
 public class ExecuteScriptCommand implements Command {
-    @Override 
+    private static final Logger log = LoggerFactory.getLogger(ExecuteScriptCommand.class);
+
+    @Override
     public String getName() { return "execute_script"; }
     
     @Override 
@@ -40,10 +45,12 @@ public class ExecuteScriptCommand implements Command {
         }
 
         if (ctx.getActiveScripts().contains(filePath)) {
+            log.warn("Recursive script detected: {}", filePath);
             ctx.getWriter().error("Recursive script detected: " + filePath + ". Skipping.");
             return;
         }
 
+        log.info("Executing script: {}", filePath);
         try (InputStreamReader isr = new InputStreamReader(
                 new FileInputStream(filePath), StandardCharsets.UTF_8);
              ConsoleReader scriptReader = new ConsoleReader(isr, false)) {
@@ -51,21 +58,27 @@ public class ExecuteScriptCommand implements Command {
             ExecutionContext scriptCtx = ctx.withReader(scriptReader);
             scriptCtx.getActiveScripts().add(filePath);
 
+            int lineNumber = 0;
             String line;
             while ((line = scriptReader.readLine()) != null) {
+                lineNumber++;
                 line = line.trim();
                 if (line.isEmpty() || line.startsWith("#")) continue;
                 String[] tokens = line.split("\\s+");
                 String name = tokens[0];
                 String[] cmdArgs = new String[tokens.length - 1];
                 System.arraycopy(tokens, 1, cmdArgs, 0, cmdArgs.length);
+                log.debug("Script line {}: {} {}", lineNumber, name, String.join(" ", cmdArgs));
                 ctx.getRegistry().execute(name, cmdArgs, scriptCtx);
             }
+            log.info("Script finished: {} ({} lines processed)", filePath, lineNumber);
             ctx.getWriter().println("Script executed: " + args[0]);
 
         } catch (FileNotFoundException e) {
+            log.error("Script file not found: {}", filePath);
             ctx.getWriter().error("Script file not found: " + args[0]);
         } catch (IOException e) {
+            log.error("Script read error: {}", e.getMessage(), e);
             ctx.getWriter().error("Script read error: " + e.getMessage());
         }
     }

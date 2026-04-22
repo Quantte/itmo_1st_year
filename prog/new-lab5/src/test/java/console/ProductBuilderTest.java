@@ -29,6 +29,7 @@ class ProductBuilderTest {
             "99.9",       // price
             "WDG-001",    // partNumber
             "KILOGRAMS",  // unitOfMeasure
+            "y",          // include owner
             "Alice",      // owner name
             "60.0",       // owner weight
             "n"           // skip location
@@ -121,6 +122,7 @@ class ProductBuilderTest {
             "10.0",
             "",           // partNumber
             "",           // unit
+            "y",          // include owner
             "Alice",      // owner name
             "55.0",       // weight
             "y",          // include location

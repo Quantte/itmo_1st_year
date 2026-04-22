@@ -2,6 +2,9 @@ package collection;
 
 import model.Product;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Collections;
 import java.util.Date;
 import java.util.LinkedList;
@@ -12,6 +15,8 @@ import java.util.Optional;
  * Handles ID generation (auto-incrementing, never reused), all CRUD and query operations.
  */
 public class CollectionManager {
+    private static final Logger log = LoggerFactory.getLogger(CollectionManager.class);
+
     private final LinkedList<Product> products = new LinkedList<>();
     private int nextId = 1;
     private final Date initDate = new Date();
@@ -51,6 +56,7 @@ public class CollectionManager {
         p.setId(nextId++);
         p.setCreationDate(new Date());
         products.add(p);
+        log.debug("Added product id={} name='{}'", p.getId(), p.getName());
     }
 
     /**
@@ -66,9 +72,11 @@ public class CollectionManager {
                 p.setId(id);
                 p.setCreationDate(products.get(i).getCreationDate());
                 products.set(i, p);
+                log.debug("Updated product id={}", id);
                 return true;
             }
         }
+        log.warn("Update failed: no product with id={}", id);
         return false;
     }
 
@@ -79,11 +87,18 @@ public class CollectionManager {
      * @return true if found and removed, false otherwise
      */
     public boolean removeById(int id) {
-        return products.removeIf(p -> p.getId() == id);
+        boolean removed = products.removeIf(p -> p.getId() == id);
+        if (removed) log.debug("Removed product id={}", id);
+        else log.warn("Remove failed: no product with id={}", id);
+        return removed;
     }
 
     /** Removes all products from the collection. */
-    public void clear() { products.clear(); }
+    public void clear() {
+        int size = products.size();
+        products.clear();
+        log.info("Collection cleared ({} elements removed)", size);
+    }
 
     /**
      * Removes and returns the first element.

@@ -51,8 +51,13 @@ public class ProductBuilder {
     }
 
     private Person readNullablePerson() throws IOException {
-        String name = readNullableString("Enter owner name (empty to skip owner): ");
-        if (name == null) return null;
+        while (true) {
+            String answer = readNullableString("Include owner? [y/N]: ");
+            if (answer == null || answer.equalsIgnoreCase("n")) return null;
+            if (answer.equalsIgnoreCase("y")) break;
+            writer.println("Enter 'y' or 'n'.");
+        }
+        String name = readNonEmptyString("Enter owner name: ");
         double weight = readPositiveDouble("Enter owner weight: ");
         Location location = readNullableLocation();
         return new Person(name, weight, location);

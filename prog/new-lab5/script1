@@ -1,0 +1,12 @@
+help
+info
+show
+remove_by_id 2
+show
+remove_first
+history
+remove_any_by_price 434234
+average_of_price
+print_descending
+clear
+exit
