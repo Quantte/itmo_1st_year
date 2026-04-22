@@ -31,8 +31,7 @@ class ProductBuilderTest {
             "KILOGRAMS",  // unitOfMeasure
             "Alice",      // owner name
             "60.0",       // owner weight
-            "",           // skip location
-            ""            // location prompt blank
+            "n"           // skip location
         );
         Product p = new ProductBuilder(r, writer()).build();
 

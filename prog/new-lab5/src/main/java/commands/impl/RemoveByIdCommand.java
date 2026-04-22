@@ -6,8 +6,11 @@ import commands.ExecutionContext;
 
 /** Removes the product with the given id. */
 public class RemoveByIdCommand implements Command {
-    @Override public String getName() { return "remove_by_id"; }
-    @Override public String getDescription() { return "Remove element by id: remove_by_id <id>"; }
+    @Override 
+    public String getName() { return "remove_by_id"; }
+    
+    @Override 
+    public String getDescription() { return "Remove element by id: remove_by_id <id>"; }
 
     @Override
     public void execute(String[] args, ExecutionContext ctx) throws ExitException {

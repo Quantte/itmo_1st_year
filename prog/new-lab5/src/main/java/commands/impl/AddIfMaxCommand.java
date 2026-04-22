@@ -14,8 +14,11 @@ import java.util.Optional;
  * If the collection is empty, the product is added unconditionally.
  */
 public class AddIfMaxCommand implements Command {
-    @Override public String getName() { return "add_if_max"; }
-    @Override public String getDescription() { return "Add product if it exceeds the current maximum"; }
+    @Override 
+    public String getName() { return "add_if_max"; }
+    
+    @Override 
+    public String getDescription() { return "Add product if it exceeds the current maximum"; }
 
     @Override
     public void execute(String[] args, ExecutionContext ctx) throws ExitException {

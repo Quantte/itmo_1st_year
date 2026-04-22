@@ -10,8 +10,11 @@ import java.io.IOException;
 
 /** Adds a new product to the collection via interactive field-by-field input. */
 public class AddCommand implements Command {
-    @Override public String getName() { return "add"; }
-    @Override public String getDescription() { return "Add a new product (interactive input)"; }
+    @Override 
+    public String getName() { return "add"; }
+    
+    @Override 
+    public String getDescription() { return "Add a new product (interactive input)"; }
 
     @Override
     public void execute(String[] args, ExecutionContext ctx) throws ExitException {

@@ -18,8 +18,11 @@ import java.nio.file.Path;
  * Detects and rejects recursive script execution (direct or transitive cycles).
  */
 public class ExecuteScriptCommand implements Command {
-    @Override public String getName() { return "execute_script"; }
-    @Override public String getDescription() { return "Execute commands from file: execute_script <filename>"; }
+    @Override 
+    public String getName() { return "execute_script"; }
+    
+    @Override 
+    public String getDescription() { return "Execute commands from file: execute_script <filename>"; }
 
     @Override
     public void execute(String[] args, ExecutionContext ctx) throws ExitException {

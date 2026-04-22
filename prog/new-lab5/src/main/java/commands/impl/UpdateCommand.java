@@ -10,8 +10,11 @@ import java.io.IOException;
 
 /** Replaces the product with the given id via interactive field-by-field input. */
 public class UpdateCommand implements Command {
-    @Override public String getName() { return "update"; }
-    @Override public String getDescription() { return "Update product by id: update <id>"; }
+    @Override 
+    public String getName() { return "update"; }
+    
+    @Override 
+    public String getDescription() { return "Update product by id: update <id>"; }
 
     @Override
     public void execute(String[] args, ExecutionContext ctx) throws ExitException {

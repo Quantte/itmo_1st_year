@@ -1,0 +1,52 @@
+[
+  {
+    "id": 2,
+    "name": "fhdsjhfjkasf",
+    "coordinates": {
+      "x": 43.0,
+      "y": 656546
+    },
+    "creationDate": "2026-04-21T23:23:49",
+    "price": 65464.0
+  },
+  {
+    "id": 3,
+    "name": "afdsffsdf",
+    "coordinates": {
+      "x": 432.0,
+      "y": 543545
+    },
+    "creationDate": "2026-04-21T23:28:49",
+    "price": 45352.0
+  },
+  {
+    "id": 4,
+    "name": "bfhjsdfjs",
+    "coordinates": {
+      "x": 43.0,
+      "y": 53452
+    },
+    "creationDate": "2026-04-21T23:56:06",
+    "price": 352345.0
+  },
+  {
+    "id": 5,
+    "name": "fhdsjhfjkasf",
+    "coordinates": {
+      "x": 534.0,
+      "y": 5435
+    },
+    "creationDate": "2026-04-22T00:01:09",
+    "price": 5.4432544E11
+  },
+  {
+    "id": 6,
+    "name": "fhdsjhfjkasf",
+    "coordinates": {
+      "x": 3.0,
+      "y": 3431
+    },
+    "creationDate": "2026-04-22T00:04:30",
+    "price": 5.4432544E11
+  }
+]

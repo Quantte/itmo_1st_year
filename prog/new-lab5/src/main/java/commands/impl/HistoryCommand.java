@@ -6,8 +6,11 @@ import commands.ExecutionContext;
 
 /** Prints the names of the last 9 executed commands (no arguments). */
 public class HistoryCommand implements Command {
-    @Override public String getName() { return "history"; }
-    @Override public String getDescription() { return "Show last 9 executed command names"; }
+    @Override 
+    public String getName() { return "history"; }
+    
+    @Override 
+    public String getDescription() { return "Show last 9 executed command names"; }
 
     @Override
     public void execute(String[] args, ExecutionContext ctx) throws ExitException {

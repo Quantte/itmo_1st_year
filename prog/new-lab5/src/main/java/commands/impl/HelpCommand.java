@@ -6,8 +6,11 @@ import commands.ExecutionContext;
 
 /** Prints all registered commands with their descriptions. */
 public class HelpCommand implements Command {
-    @Override public String getName() { return "help"; }
-    @Override public String getDescription() { return "Show available commands"; }
+    @Override 
+    public String getName() { return "help"; }
+    
+    @Override 
+    public String getDescription() { return "Show available commands"; }
 
     @Override
     public void execute(String[] args, ExecutionContext ctx) throws ExitException {

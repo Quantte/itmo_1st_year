@@ -59,8 +59,12 @@ public class ProductBuilder {
     }
 
     private Location readNullableLocation() throws IOException {
-        String answer = readNullableString("Enter owner location? (y to include, empty to skip): ");
-        if (answer == null || !answer.equalsIgnoreCase("y")) return null;
+        while (true) {
+            String answer = readNullableString("Enter owner location? [Y/n]: ");
+            if (answer == null || answer.equalsIgnoreCase("y")) break;
+            else if (answer.equalsIgnoreCase("n")) return null;
+            else writer.println("Enter either 'y' or 'n'.");
+        }
         double x = readDouble("Enter location.x: ");
         Integer y = readInt("Enter location.y: ");
         int z = readInt("Enter location.z: ");
