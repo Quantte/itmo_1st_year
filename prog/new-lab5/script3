@@ -1,1 +1,3 @@
+show
 execute_script script4
+print_descending
